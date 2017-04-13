@@ -437,10 +437,6 @@ ReaderMainToolbarDelegate, ReaderMainPagebarDelegate, ReaderContentViewDelegate,
 
 - (void)viewDidUnload
 {
-#ifdef DEBUG
-    NSLog(@"%s", __FUNCTION__);
-#endif
-    
     mainToolbar = nil; mainPagebar = nil;
     
     theScrollView = nil; contentViews = nil; lastHideTime = nil;
@@ -468,13 +464,6 @@ ReaderMainToolbarDelegate, ReaderMainPagebarDelegate, ReaderContentViewDelegate,
 }
 
 - (void) viewWillLayoutSubviews {
-#ifdef DEBUG
-    NSLog(@"%@ %s frame %@", [self.class description], __FUNCTION__, NSStringFromCGRect(self.view.frame));
-    NSLog(@"%@ %s bounds %@", [self.class description], __FUNCTION__, NSStringFromCGRect(self.view.bounds));
-#endif
-    
-    //if (isVisible == NO) return; // iOS present modal bodge
-    
     [self updateScrollViewContentViews]; // Update content views
     
     lastAppearSize = CGSizeZero; // Reset view size tracking
@@ -482,10 +471,6 @@ ReaderMainToolbarDelegate, ReaderMainPagebarDelegate, ReaderContentViewDelegate,
 
 - (void)updateScrollViewContentViews
 {
-#ifdef DEBUGX
-    NSLog(@"%s", __FUNCTION__);
-#endif
-    
     [self updateScrollViewContentSize]; // Update the content size
     
     NSMutableIndexSet *pageSet = [NSMutableIndexSet indexSet]; // Page set
@@ -522,10 +507,6 @@ ReaderMainToolbarDelegate, ReaderMainPagebarDelegate, ReaderContentViewDelegate,
 
 - (void)updateScrollViewContentSize
 {
-#ifdef DEBUGX
-    NSLog(@"%s", __FUNCTION__);
-#endif
-    
     NSInteger count = [document.pageCount integerValue];
     
     //if (count > PAGING_VIEWS) count = PAGING_VIEWS; // Limit
@@ -535,13 +516,6 @@ ReaderMainToolbarDelegate, ReaderMainPagebarDelegate, ReaderContentViewDelegate,
     CGFloat contentWidth = (theScrollView.bounds.size.width * count);
     
     theScrollView.contentSize = CGSizeMake(contentWidth, contentHeight);
-}
-
-- (void) viewDidLayoutSubviews {
-#ifdef DEBUG
-    NSLog(@"%@ %s frame %@", [self.class description], __FUNCTION__, NSStringFromCGRect(self.view.frame));
-    NSLog(@"%@ %s bounds %@", [self.class description], __FUNCTION__, NSStringFromCGRect(self.view.bounds));
-#endif
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
