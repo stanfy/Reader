@@ -28,6 +28,7 @@
 #import "ReaderThumbRequest.h"
 #import "ReaderThumbCache.h"
 #import "ReaderDocument.h"
+#import "ImageLoader.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -431,7 +432,7 @@
 
 		[imageView addSubview:tintView];
 
-		UIImage *image = [UIImage imageNamed:@"Reader-Mark-Y"];
+		UIImage *image = [ImageLoader loadImageNamed:@"Reader-Mark-Y"];
 
 		bookMark = [[UIImageView alloc] initWithImage:image];
 

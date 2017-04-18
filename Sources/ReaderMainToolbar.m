@@ -26,6 +26,7 @@
 #import "ReaderConstants.h"
 #import "ReaderMainToolbar.h"
 #import "ReaderDocument.h"
+#import "ImageLoader.h"
 
 #import <MessageUI/MessageUI.h>
 
@@ -75,8 +76,8 @@
 #if (READER_FLAT_UI == TRUE) // Option
 		UIImage *buttonH = nil; UIImage *buttonN = nil;
 #else
-		UIImage *buttonH = [[UIImage imageNamed:@"Reader-Button-H"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
-		UIImage *buttonN = [[UIImage imageNamed:@"Reader-Button-N"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
+        UIImage *buttonH = [[ImageLoader loadImageNamed:@"Reader-Button-H"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
+        UIImage *buttonN = [[ImageLoader loadImageNamed:@"Reader-Button-N"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
 #endif // end of READER_FLAT_UI Option
 
 		BOOL largeDevice = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad);
@@ -116,7 +117,7 @@
 
 		UIButton *thumbsButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		thumbsButton.frame = CGRectMake(leftButtonX, BUTTON_Y, iconButtonWidth, BUTTON_HEIGHT);
-		[thumbsButton setImage:[UIImage imageNamed:@"Reader-Thumbs"] forState:UIControlStateNormal];
+		[thumbsButton setImage:[ImageLoader loadImageNamed:@"Reader-Thumbs"] forState:UIControlStateNormal];
 		[thumbsButton addTarget:self action:@selector(thumbsButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 		[thumbsButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
 		[thumbsButton setBackgroundImage:buttonN forState:UIControlStateNormal];
@@ -150,8 +151,8 @@
 
 		markButton = flagButton; markButton.enabled = NO; markButton.tag = NSIntegerMin;
 
-		markImageN = [UIImage imageNamed:@"Reader-Mark-N"]; // N image
-		markImageY = [UIImage imageNamed:@"Reader-Mark-Y"]; // Y image
+		markImageN = [ImageLoader loadImageNamed:@"Reader-Mark-N"]; // N image
+		markImageY = [ImageLoader loadImageNamed:@"Reader-Mark-Y"]; // Y image
 
 #endif // end of READER_BOOKMARKS Option
 
@@ -167,7 +168,7 @@
 
 					UIButton *emailButton = [UIButton buttonWithType:UIButtonTypeCustom];
 					emailButton.frame = CGRectMake(rightButtonX, BUTTON_Y, iconButtonWidth, BUTTON_HEIGHT);
-					[emailButton setImage:[UIImage imageNamed:@"Reader-Email"] forState:UIControlStateNormal];
+					[emailButton setImage:[ImageLoader loadImageNamed:@"Reader-Email"] forState:UIControlStateNormal];
 					[emailButton addTarget:self action:@selector(emailButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 					[emailButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
 					[emailButton setBackgroundImage:buttonN forState:UIControlStateNormal];
@@ -190,7 +191,7 @@
 
 				UIButton *printButton = [UIButton buttonWithType:UIButtonTypeCustom];
 				printButton.frame = CGRectMake(rightButtonX, BUTTON_Y, iconButtonWidth, BUTTON_HEIGHT);
-				[printButton setImage:[UIImage imageNamed:@"Reader-Print"] forState:UIControlStateNormal];
+				[printButton setImage:[ImageLoader loadImageNamed:@"Reader-Print"] forState:UIControlStateNormal];
 				[printButton addTarget:self action:@selector(printButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 				[printButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
 				[printButton setBackgroundImage:buttonN forState:UIControlStateNormal];
@@ -208,7 +209,7 @@
 
 			UIButton *exportButton = [UIButton buttonWithType:UIButtonTypeCustom];
 			exportButton.frame = CGRectMake(rightButtonX, BUTTON_Y, iconButtonWidth, BUTTON_HEIGHT);
-			[exportButton setImage:[UIImage imageNamed:@"Reader-Export"] forState:UIControlStateNormal];
+			[exportButton setImage:[ImageLoader loadImageNamed:@"Reader-Export"] forState:UIControlStateNormal];
 			[exportButton addTarget:self action:@selector(exportButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 			[exportButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
 			[exportButton setBackgroundImage:buttonN forState:UIControlStateNormal];
