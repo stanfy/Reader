@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EA57B0F1EA764B300D7E38D /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA57B0E1EA764B300D7E38D /* ImageLoader.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -72,6 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EA57B0D1EA764B300D7E38D /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		0EA57B0E1EA764B300D7E38D /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -342,6 +345,8 @@
 				45AB7312141FC0B1003524C3 /* ThumbsViewController.m */,
 				45AB730F141FC0B1003524C3 /* ThumbsMainToolbar.h */,
 				45AB7310141FC0B1003524C3 /* ThumbsMainToolbar.m */,
+				0EA57B0D1EA764B300D7E38D /* ImageLoader.h */,
+				0EA57B0E1EA764B300D7E38D /* ImageLoader.m */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				45AB7313141FC0B1003524C3 /* CGPDFDocument.m in Sources */,
 				45AB7314141FC0B1003524C3 /* ReaderConstants.m in Sources */,
 				45AB7315141FC0B1003524C3 /* ReaderContentPage.m in Sources */,
+				0EA57B0F1EA764B300D7E38D /* ImageLoader.m in Sources */,
 				45AB7316141FC0B1003524C3 /* ReaderContentTile.m in Sources */,
 				45AB7317141FC0B1003524C3 /* ReaderContentView.m in Sources */,
 				45AB7318141FC0B1003524C3 /* ReaderDocument.m in Sources */,
